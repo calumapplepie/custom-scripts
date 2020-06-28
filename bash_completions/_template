@@ -1,0 +1,23 @@
+# This is a template to help me quickly setup bash completion files
+# Replace all instances of template with the program name
+# INCLUDING the one in the filename
+
+# This was in large part stolen from the abs-guide package's article
+
+_template (){
+        local cur
+        # Pointer to current completion word.
+        # By convention, it's named "cur" but this isn't strictly necessary.
+     
+        COMPREPLY=()   # Array variable storing the possible completions.
+        cur=${COMP_WORDS[COMP_CWORD]}
+        
+        case "$cur" in
+                -*) # matches all beginning with -*
+                       COMPREPLY=() #FILL THAT!
+		;;
+	esac
+        return 0
+}
+
+complete -F _template template
