@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" == "Download" ]
+then
+	sudo apt -d install `cat ~/toInstall.txt`
+elif [ "$1" == "Install" ]
+then
+	sudo apt install `cat ~/toInstall.txt`
+elif [ "$1" == "Clean" ]
+then
+        > ~/toInstall.txt
+else
+	for pkg in "$@"
+	do
+		echo $pkg
+		echo $pkg >> ~/toInstall.txt
+	done
+fi

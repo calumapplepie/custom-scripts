@@ -1,0 +1,23 @@
+# This was in large part stolen from the abs-guide package's article
+
+_installLater (){
+        local cur
+        # Pointer to current completion word.
+        # By convention, it's named "cur" but this isn't strictly necessary.
+     
+        COMPREPLY=()   # Array variable storing the possible completions.
+        cur=${COMP_WORDS[COMP_CWORD]}
+        
+        if [ $cur = ${cur^} ]
+        then
+        	COMPREPLY=( $(compgen -W 'Install Download Clean' -- $cur))
+        	return 0
+        fi
+        
+        COMPREPLY=( $(apt-cache --no-generate pkgnames "$cur" \
+                    2>/dev/null) )
+        
+        return 0
+}
+
+complete -F _installLater installLater
