@@ -1,18 +1,23 @@
 #!/bin/bash
 
+InstallList=~/toInstall.txt
+
 if [ "$1" == "Download" ]
 then
-	sudo apt -d install `cat ~/toInstall.txt`
+	sudo apt -d install `cat $InstallList`
 elif [ "$1" == "Install" ]
 then
-	sudo apt install `cat ~/toInstall.txt`
+	sudo apt install `cat $InstallList`
 elif [ "$1" == "Clean" ]
 then
-        > ~/toInstall.txt
+        > $InstallList
+elif [ "$1" == "List" ]
+then
+	cat $InstallList
 else
 	for pkg in "$@"
 	do
 		echo $pkg
-		echo $pkg >> ~/toInstall.txt
+		echo $pkg >> $InstallList
 	done
 fi
