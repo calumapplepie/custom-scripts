@@ -10,7 +10,7 @@ _installLater (){
         
         if [ $cur = ${cur^} ]
         then
-        	COMPREPLY=( $(compgen -W 'Install Download Clean' -- $cur))
+        	COMPREPLY=( $(compgen -W 'Install Download Clean List Edit' -- $cur))
         	return 0
         fi
         

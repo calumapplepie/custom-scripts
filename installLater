@@ -4,7 +4,7 @@ InstallList=~/toInstall.txt
 
 if [ "$1" == "Download" ]
 then
-	sudo apt -d install `cat $InstallList`
+	sudo apt -dy install `cat $InstallList`
 elif [ "$1" == "Install" ]
 then
 	sudo apt install `cat $InstallList`
@@ -14,6 +14,9 @@ then
 elif [ "$1" == "List" ]
 then
 	cat $InstallList
+elif [ "$1" == "Edit" ]
+then
+	nano $InstallList
 else
 	for pkg in "$@"
 	do
