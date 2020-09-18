@@ -1,0 +1,21 @@
+# This is a template to help me quickly setup bash completion files
+# Replace all instances of template with the program name
+# INCLUDING the one in the filename
+
+# This was in large part stolen from the abs-guide package's article
+
+_browser-mngr (){
+        local cur
+        # Pointer to current completion word.
+        # By convention, it's named "cur" but this isn't strictly necessary.
+     
+     	local subcommands=( School Chrome Home Firefox Both Dual Neither Off )
+     	
+        COMPREPLY=()   # Array variable storing the possible completions.
+        cur=${COMP_WORDS[COMP_CWORD]^}
+        
+        COMPREPLY=($(compgen -W '${subcommands[*]}  ${subcommands[*],}' -- $cur) )
+        return 0
+}
+
+complete -F _browser-mngr browser-mngr
