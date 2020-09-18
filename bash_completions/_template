@@ -19,7 +19,7 @@ _template (){
                 #-*) # matches all beginning with -*
                 #       COMPREPLY=() #FILL THAT!
 		#;;
-		* ) COMPREPLY= $(compgen -W ${subcommands[*]} -- $cur)
+		* ) COMPREPLY=($(compgen -W '${subcommands[*]}' -- $cur))
 		;;
 	esac
         return 0
