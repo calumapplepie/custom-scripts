@@ -2,6 +2,8 @@
 
 InstallList=~/toInstall.txt
 
+cat $InstallList
+
 if [ "$1" == "Download" ]
 then
 	sudo apt -dy install `cat $InstallList`
@@ -11,13 +13,11 @@ then
 elif [ "$1" == "Clean" ]
 then
         > $InstallList
-elif [ "$1" == "List" ]
-then
-	cat $InstallList
 elif [ "$1" == "Edit" ]
 then
 	nano $InstallList
 else
+        echo "================"
 	for pkg in "$@"
 	do
 		echo $pkg
