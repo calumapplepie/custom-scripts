@@ -8,7 +8,7 @@ _installLater (){
         COMPREPLY=()   # Array variable storing the possible completions.
         cur=${COMP_WORDS[COMP_CWORD]}
         
-        if [ $cur = ${cur^} ]
+        if [ ${cur} = ${cur^} ] #First letter is uppercase: not a pkg
         then
         	COMPREPLY=( $(compgen -W 'Install Download Clean List Edit' -- $cur))
         	return 0
