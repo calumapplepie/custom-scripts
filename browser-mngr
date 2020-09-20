@@ -1,30 +1,27 @@
 #!/bin/bash
 
-chromiumStatus= 'false'
-firefoxStatus= 'false'
+chromiumStatus='false'
+firefoxStatus='false'
 
 # Set vars
 case ${1^} in #ensure first letter is uppercase
-"School" | "Chrome" ) 
+"School" | "Chrome" )
 	chromiumStatus='true'
 	firefoxStatus='false'
 	;;
 "Home" | "Firefox")
-	echo hi
-	chromiumStatus= 'false'
-	firefoxStatus= 'true'
+	chromiumStatus='false'
+	firefoxStatus='true'
 	;;
 "Both" |"Dual" )
-	echo bi
-	chromiumStatus= 'true'
-	firefoxStatus= 'true'
+	chromiumStatus='true'
+	firefoxStatus='true'
 	;;
 "Neither" |"Off" )
-	chromiumStatus= 'false'
-	firefoxStatus= 'false'
+	chromiumStatus='false'
+	firefoxStatus='false'
 	;;
 esac
-echo ${chromiumStatus}
 
 if $chromiumStatus; then
 	pkill chromium --signal CONT
