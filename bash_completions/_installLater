@@ -7,16 +7,18 @@ _installLater (){
      
         COMPREPLY=()   # Array variable storing the possible completions.
         cur=${COMP_WORDS[COMP_CWORD]}
+	
+        local subcommands
+	subcommands=(Install Download Clean Edit)
         
-        if [ ${cur} = ${cur^} ] #First letter is uppercase: not a pkg
-        then
-        	COMPREPLY=( $(compgen -W 'Install Download Clean List Edit' -- $cur))
-        	return 0
+        if [ $cur = ${cur^} -o -z $cur ] #First letter is uppercase: not a pkg
+	then
+		COMPREPLY=($(compgen -W '${subcommands[*]}' -- $cur))
+		return 0
         fi
         
         COMPREPLY=( $(apt-cache --no-generate pkgnames "$cur" \
-                    2>/dev/null) )
-        
+                    2>/dev/null) ) # Definitly not ripped from apt source
         return 0
 }
 
