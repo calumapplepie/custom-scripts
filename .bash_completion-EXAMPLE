@@ -1,0 +1,3 @@
+for calumCompletionFile in ~/.local/custBin/bash_completions/*; do
+	. "$calumCompletionFile"
+done
