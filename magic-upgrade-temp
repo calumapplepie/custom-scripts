@@ -1,4 +1,6 @@
 sudo nice -n 20 apt update
 sudo nice -n 20 debdelta-upgrade -v
 sudo nice -n 20 apt upgrade
+installLater Install
 sudo nice -n 20 apt autoclean
+installLater Clean
