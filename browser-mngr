@@ -23,14 +23,17 @@ case ${1^} in #ensure first letter is uppercase
 	;;
 esac
 
+chromename='/usr/lib/chromium/*'
+firefoxname='/usr/lib/firefox-esr/*'
+
 if $chromiumStatus; then
-	pkill chromium --signal CONT
+	pkill -f "$chromename" --signal CONT
 else
-	pkill chromium --signal STOP
+	pkill -f "$chromename" --signal STOP
 fi
 
 if $firefoxStatus; then
-	pkill firefox-esr --signal CONT
+	pkill -f "$firefoxname" --signal CONT
 else
-	pkill firefox-esr --signal STOP
+	pkill -f "$firefoxname" --signal STOP
 fi

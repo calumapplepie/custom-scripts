@@ -9,7 +9,7 @@ then
 	sudo apt -dy install `cat $InstallList`
 elif [ "$1" == "Install" ]
 then
-	sudo apt install `cat $InstallList`
+	nice -n 20 sudo apt install `cat $InstallList`
 elif [ "$1" == "Clean" ]
 then
         > $InstallList
