@@ -6,8 +6,16 @@ remain my custom scripts, and not whatever is installed to my user.
 
 I further reccomend setting up a file in ~/.bash_completion to run the contents of
 ./bash_completions, as those are quite nice IMHO.  My example is included here,
-as .bash_completion-EXAMPLE
+as EXAMPLE-.bash_completion
 
 
 Obviously, YOU are responsible for any damage these do: and yes, that also applies
-to future versions of myself.
+to future versions of myself.  These scripts never need to be run as root: they use
+'sudo' wherever necessary.
+
+
+-------
+
+
+This code is licensed under the GPLv3, or any later version.  Contact me for any
+questions
