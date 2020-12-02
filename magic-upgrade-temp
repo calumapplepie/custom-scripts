@@ -1,3 +1,4 @@
+set -e
 sudo nice -n 20 apt update
 sudo nice -n 20 debdelta-upgrade -v
 sudo nice -n 20 apt dist-upgrade -dy
