@@ -1,12 +1,19 @@
 set -e
 cd ~
+
+# Use all internet-dependent things first
 sudo nice -n 10 mr online &
 sudo nice -n 20 apt update
 sudo nice -n 20 debdelta-upgrade -v
+# Debdelta won't download new packages needed for update
 sudo nice -n 20 apt dist-upgrade -dy
+sudo nice -n 20 installLater Download
 sudo nice -n 10 mr fetch &
-installLater Download
+
+# Install downloaded updates
 sudo nice -n 20 apt upgrade
-installLater Install
-sudo nice -n 20 apt autoclean
+sudo nice -n 20 installLater Install
+
+#Cleanup
+sudo apt autoclean
 installLater Clean
