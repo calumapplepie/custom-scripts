@@ -1,7 +1,10 @@
 set -e
+cd ~
+sudo nice -n 10 mr online &
 sudo nice -n 20 apt update
 sudo nice -n 20 debdelta-upgrade -v
 sudo nice -n 20 apt dist-upgrade -dy
+sudo nice -n 10 mr fetch &
 installLater Download
 sudo nice -n 20 apt upgrade
 installLater Install
