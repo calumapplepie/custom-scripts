@@ -1,26 +1,32 @@
 #!/bin/bash
 
 InstallList=~/toInstall.txt
-
-cat $InstallList
+if [ -e $InstallList ]
+then
+	RunStuff=true
+else
+	RunStuff=false
+fi
+$RunStuff && cat $InstallList
 
 if [ "$1" == "Download" ]
 then
-	sudo apt -dy install `cat $InstallList`
+	$RunStuff && sudo apt -dy install `cat $InstallList`
 elif [ "$1" == "Install" ]
 then
-	nice -n 20 sudo apt install `cat $InstallList`
+	$RunStuff && nice -n 20 sudo apt install `cat $InstallList`
 elif [ "$1" == "Clean" ]
 then
-        > $InstallList
+        $RunStuff && rm $InstallList
 elif [ "$1" == "Edit" ]
 then
 	nano $InstallList
 else
-        echo "================"
+        $RunStuff && echo "================"
 	for pkg in "$@"
 	do
 		echo $pkg
 		echo $pkg >> $InstallList
 	done
 fi
+
