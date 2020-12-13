@@ -3,7 +3,8 @@ cd ~
 
 # Use all internet-dependent things first
 sudo nice -n 20 apt update
-sudo nice -n 20 debdelta-upgrade -v
+# Debdelta broken by python3.9, awaiting NMU
+#sudo nice -n 20 debdelta-upgrade -v
 # Debdelta won't download new packages needed for update
 sudo nice -n 20 apt dist-upgrade -dy
 nice -n 20 installLater Download
@@ -12,6 +13,6 @@ nice -n 20 installLater Download
 sudo nice -n 20 apt upgrade
 nice -n 20 installLater Install
 
-#Cleanup
+# Cleanup
 sudo apt autoclean
 installLater Clean
