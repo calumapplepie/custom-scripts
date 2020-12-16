@@ -13,7 +13,7 @@ then
 		exit
 	elif [ "$1" == "Install" ]
 	then
-		nice -n 20 sudo apt install `cat $InstallList`
+		nice sudo apt install `cat $InstallList`
 		exit
 	elif [ "$1" == "Clean" ]
 	then
