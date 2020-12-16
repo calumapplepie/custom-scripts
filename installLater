@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 InstallList=~/toInstall.txt
 if [ -e $InstallList ]
 then
@@ -8,24 +10,32 @@ then
 	if [ "$1" == "Download" ]
 	then
 		sudo apt -dy install `cat $InstallList`
+		exit
 	elif [ "$1" == "Install" ]
 	then
 		nice -n 20 sudo apt install `cat $InstallList`
+		exit
 	elif [ "$1" == "Clean" ]
 	then
 		rm $InstallList
+		exit
 	fi
 fi
 if [ "$1" == "Edit" ]
 then
 	nano $InstallList
+	exit
 elif [ "$1" != "${1^}" ] #first letter of first command is lowercase
 then
-        echo "================"
+	if [ -e $InstallList ] 
+	then 
+		echo "================"
+	fi
+	
 	for pkg in "$@"
 	do
 		echo $pkg
 		echo $pkg >> $InstallList
 	done
+	exit
 fi
-
