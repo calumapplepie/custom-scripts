@@ -14,5 +14,5 @@ sudo nice -n 20 apt upgrade
 nice -n 20 installLater Install
 
 # Cleanup
-sudo apt autoclean
+sudo apt clean # I use apt-cacher-ng, so no need for duplicates
 installLater Clean
