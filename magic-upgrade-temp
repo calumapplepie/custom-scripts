@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 cd ~ # Standardize directory that we run 'mr fetch' in
 
