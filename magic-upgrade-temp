@@ -2,7 +2,7 @@ set -e
 cd ~ # Standardize directory that we run 'mr fetch' in
 
 # Start a fetch of all git repos, yeet it into the background
-mr fetch & && echo "myrepos fetched"
+mr fetch &
 
 su # Grab root here, instead of as part of 'sudo' commands
 echo "Superusered from user " $USERNAME
