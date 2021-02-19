@@ -6,8 +6,9 @@ set -e
 
 # Grab all internet-dependent things first
 nice -n 19 apt update
-nice -n 20 debdelta-upgrade -v
-# Debdelta won't download new packages needed for update
+
+# Don't bother with DebDelta: the package cache will always be empty
+# TODO: Use apt-cacher-ng 's precaching feature
 nice -n 19 apt dist-upgrade -dy
 nice -n 19 installLater Download
 
