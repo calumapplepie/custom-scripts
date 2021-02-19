@@ -1,1 +1,24 @@
 #!/bin/bash
+
+#Standardize directory
+cd ~
+
+# Make a temporary file for MR's log
+DATE=$(date +%b%d-%T)
+TEMPFILE=$(mktemp -t mr-status-$DATE.XXXXX)
+
+#Launch mr fetch in background, direct output to tempfile
+mr fetch  &> $TEMPFILE &
+
+# Construct scriptname of root file
+MAGICROOT="$0""-root"
+echo $MAGICROOT
+echo $TEMPFILE
+echo "Starting Apt upgrades..."
+sudo bash $MAGICROOT
+
+echo "Apt upgrades complete, waiting for MR fetch"
+
+wait
+echo "MR Results: \n"
+cat $TEMPFILE
