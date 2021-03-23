@@ -10,7 +10,9 @@ nice -n 19 apt update
 # Don't bother with DebDelta: the package cache will always be empty
 # TODO: Use apt-cacher-ng 's precaching feature
 nice -n 19 apt dist-upgrade -dy
-nice -n 19 installLater Download
+echo "$@"
+echo "${@%$'\n'}" | od -vtc -to1
+nice -n 19 apt install -dy "${@%$'\n'}"
 
 # Install downloaded updates
 nice -n 19 apt upgrade
