@@ -17,12 +17,15 @@ echo $TEMPFILE
 
 # Get list of InstallLater packages
 TOINSTALL=`installLater List`
-echo "$TOINSTALL"
 
 echo "Starting Apt upgrades..."
 sudo bash $MAGICROOT $TOINSTALL
+if [ "$?" -eq "0" ]; then
+	printf "\nApt upgrade successful, cleaning installLater\n"
+	installLater Clean;
+fi
 
-echo "Apt upgrades complete, waiting for MR fetch"
+printf "\n Apt upgrades complete, waiting for MR fetch \n"
 
 wait
 printf "MR Results: \n"

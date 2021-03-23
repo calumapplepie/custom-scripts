@@ -4,20 +4,30 @@ set -e
 # Make sure we have root
 [[ $UID = 0 ]] || { echo "Please have root powers when executing this script"; exit; }
 
+# Printf to expand newlines
+printf "\n Update apt package list \n"
 # Grab all internet-dependent things first
 nice -n 19 apt update
+
+printf "\n Download packages needed for upgrade \n"
 
 # Don't bother with DebDelta: the package cache will always be empty
 # TODO: Use apt-cacher-ng 's precaching feature
 nice -n 19 apt dist-upgrade -dy
-echo "$@"
-echo "${@%$'\n'}" | od -vtc -to1
-nice -n 19 apt install -dy "${@%$'\n'}"
 
+printf "\n Download installLater packages \n"
+nice -n 19 apt install -dy "$@"
+
+printf "\n Install upgrades \n"
 # Install downloaded updates
 nice -n 19 apt upgrade
-nice -n 19 installLater Install
+
+printf "\n Install installLater Packages \n"
+nice -n 19 apt install "$@"
 
 # Cleanup
 apt clean # I use apt-cacher-ng, so no need for duplicates
-installLater Clean # Flushes installLater list
+
+# Okay, so printf is uneeded work, and I'm a lazy bum,  Didn't
+# realize that it wouldn't append a newline!
+echo -e "\nAll done!"
