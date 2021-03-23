@@ -1,0 +1,11 @@
+[Unit]
+Description=Log some fun data, for science
+
+[Timer]
+# Run on Sunday at 3:10am, to avoid running afoul of DST changes
+OnUnitInactiveSec=20min
+AccuracySec=3min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

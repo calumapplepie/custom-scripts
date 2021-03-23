@@ -1,0 +1,6 @@
+[Unit]
+Description=Run my fun data logging timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/calum/.local/custBin/log-fun-data

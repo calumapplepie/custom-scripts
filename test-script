@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "HELLO WORLD" $HOME
+echo "YO" $0
+[[ $UID = 0 ]] || { sudo "$0" "$@"; exit; }
+echo "ROOTED" $HOME
+echo "apples are great, right?"
+echo PIE $HOME

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /home/calum/
+echo $(date) >> .fun-log
+echo "sdastat" >> .fun-log
+cat /sys/block/sda/stat >> .fun-log
+echo "" >> .fun-log
