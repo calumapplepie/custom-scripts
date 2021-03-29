@@ -4,3 +4,8 @@ echo $(date) >> .fun-log
 echo "sdastat" >> .fun-log
 cat /sys/block/sda/stat >> .fun-log
 echo "" >> .fun-log
+echo "free memory" >> .fun-log
+# Space in case of aliasing (I dunno if that applies)
+ free -w >> .fun-log
+echo "" >> .fun-log
+echo "" >> .fun-log
