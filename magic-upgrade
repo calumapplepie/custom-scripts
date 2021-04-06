@@ -3,6 +3,9 @@
 #Standardize directory
 cd ~
 
+# Bump fun log, for, well, fun
+log-fun-data
+
 # Make a temporary file for MR's log
 DATE=$(date +%b%d-%T)
 TEMPFILE=$(mktemp -t mr-status-$DATE.XXXXX)
@@ -30,3 +33,6 @@ printf "\n Apt upgrades complete, waiting for MR fetch \n"
 wait
 printf "MR Results: \n"
 cat $TEMPFILE
+
+# Bump log again, for more fun
+log-fun-data
