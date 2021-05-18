@@ -9,7 +9,7 @@ _browser-mngr (){
         # Pointer to current completion word.
         # By convention, it's named "cur" but this isn't strictly necessary.
      
-     	local subcommands=( School Chrome Home Firefox Both Dual Neither Off )
+     	local subcommands=( SchoolStrict SchoolLazy HomeStrict HomeLazy Off )
      	
         COMPREPLY=()   # Array variable storing the possible completions.
         cur=${COMP_WORDS[COMP_CWORD]^}

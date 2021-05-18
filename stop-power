@@ -2,29 +2,41 @@
 
 chromiumStatus='false'
 firefoxStatus='false'
+torrentManagerStatus='false'
 
 # Set vars
 case ${1^} in #ensure first letter is uppercase
-"School" | "Chrome" )
+"SchoolStrict" )
 	chromiumStatus='true'
 	firefoxStatus='false'
+	torrentManagerStatus='false'
 	;;
-"Home" | "Firefox")
-	chromiumStatus='false'
-	firefoxStatus='true'
-	;;
-"Both" |"Dual" )
+"SchoolLazy" )
 	chromiumStatus='true'
 	firefoxStatus='true'
+	torrentManagerStatus='false'
 	;;
-"Neither" |"Off" )
+"HomeStrict")
+	chromiumStatus='false'
+	firefoxStatus='true'
+	torrentManagerStatus='true'
+	;;
+"HomeLazy" )
+	chromiumStatus='true'
+	firefoxStatus='true'
+	torrentManagerStatus='true'
+	;;
+"Off" )
 	chromiumStatus='false'
 	firefoxStatus='false'
+	torrentManagerStatus='false'
 	;;
 esac
 
 chromename='/usr/lib/chromium/*'
 firefoxname='/usr/lib/firefox-esr/*'
+torrentManagerName='qbittorent'
+
 
 if $chromiumStatus; then
 	pkill -f "$chromename" --signal CONT
@@ -37,3 +49,10 @@ if $firefoxStatus; then
 else
 	pkill -f "$firefoxname" --signal STOP
 fi
+
+if $torrentManagerStatus; then
+	pkill -f "$torrentManagerName" --signal CONT
+else
+	pkill -f "$torrentManagerName" --signal STOP
+fi
+	
