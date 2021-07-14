@@ -4,6 +4,8 @@ chromiumStatus='false'
 firefoxStatus='false'
 torrentManagerStatus='false'
 
+echo ${1^}
+
 # Set vars
 case ${1^} in #ensure first letter is uppercase
 "SchoolStrict" )
@@ -35,8 +37,7 @@ esac
 
 chromename='/usr/lib/chromium/*'
 firefoxname='/usr/lib/firefox-esr/*'
-torrentManagerName='qbittorent'
-
+torrentManagerName='qbittorrent'
 
 if $chromiumStatus; then
 	pkill -f "$chromename" --signal CONT

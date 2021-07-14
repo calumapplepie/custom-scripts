@@ -4,7 +4,7 @@
 
 # This was in large part stolen from the abs-guide package's article
 
-_browser-mngr (){
+_stop-power (){
         local cur
         # Pointer to current completion word.
         # By convention, it's named "cur" but this isn't strictly necessary.
@@ -18,4 +18,4 @@ _browser-mngr (){
         return 0
 }
 
-complete -F _browser-mngr browser-mngr
+complete -F _stop-power stop-power
