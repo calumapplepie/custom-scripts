@@ -10,9 +10,8 @@ log-fun-data
 DATE=$(date +%b%d-%T)
 TEMPFILE=$(mktemp -t mr-status-$DATE.XXXXX)
 
-#Launch mr fetch in background, direct output to tempfile
-mr remember fetch --progress > /dev/null
-mr online &> $TEMPFILE &
+# Start mr fetch in background
+mr fetch --progress &>> $TEMPFILE
 
 # Construct scriptname of root file
 MAGICROOT="$0""-root"
@@ -30,6 +29,9 @@ if [ "$?" -eq "0" ]; then
 fi
 
 printf "\n Apt upgrades complete, waiting for MR fetch \n"
+
+# Catch up on any not-yet-done MR commands
+mr online &>> $TEMPFILE &
 
 wait
 printf "MR Results: \n"
