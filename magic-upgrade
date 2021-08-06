@@ -11,7 +11,7 @@ DATE=$(date +%b%d-%T)
 TEMPFILE=$(mktemp -t mr-status-$DATE.XXXXX)
 
 # Start mr fetch in background
-mr fetch --progress &>> $TEMPFILE
+mr fetch --progress &>> $TEMPFILE &
 
 # Construct scriptname of root file
 MAGICROOT="$0""-root"
