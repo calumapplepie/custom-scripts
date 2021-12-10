@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 
 from num2words import num2words
+from time import sleep
 
 print("Welcome to my game!")
 
 def magicNumGame(x):
-    len = num2words(x).length
-	print(x+" is "+len)
-    if(len == 4):
+    length = len(num2words(x))
+    print(x," is ",length)
+    sleep(0.5)
+    if(length == 4):
         print("4 is 4")
-		return
-    magicNumGame(len)
+        sleep(0.5)
+        return
+    magicNumGame(length)
 	
 
 while(True):
@@ -19,8 +22,12 @@ while(True):
     except ValueError:
         print("That wasnt a valid number! Try again!")
     else:
-        print("You entered: " + val)
-	    magicNumGame(val)
-		print("4 is the magic number :)")
+        print("You entered:",val)
+        magicNumGame(val)
+        sleep(.2)
+        print("4 is the magic number :)")
+        sleep(1)
+        print()
+        print()
 	
 
