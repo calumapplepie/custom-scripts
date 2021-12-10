@@ -4,21 +4,23 @@ from num2words import num2words
 
 print("Welcome to my game!")
 
-while(True):
-	try:
-		val = float(input("Enter any number: "))
-		break;
-	except ValueError:
-		print("That wasnt a valid number! Try again!")
-	print("You entered: " + val)
-	magicNumGame(val)
-	print("4 is the magic number :)")
-	
 def magicNumGame(x):
-	len = num2words(x).length
+    len = num2words(x).length
 	print(x+" is "+len)
-	if(len == 4):
-		print("4 is 4")
+    if(len == 4):
+        print("4 is 4")
 		return
-	magicNumGame(len)
+    magicNumGame(len)
 	
+
+while(True):
+    try:
+        val = float(input("Enter any number: "))
+    except ValueError:
+        print("That wasnt a valid number! Try again!")
+    else:
+        print("You entered: " + val)
+	    magicNumGame(val)
+		print("4 is the magic number :)")
+	
+
