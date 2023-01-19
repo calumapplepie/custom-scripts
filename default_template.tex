@@ -25,6 +25,26 @@
 % Some conveniences for me
 \newcommand{\Laplace}[1]{\mathscr{L}\left[#1\right]}
 \newcommand{\InvLaplace}[1]{\mathscr{L}^{-1}\left[#1\right]}
+
+% vectors
+\newcommand{\qvector}[4]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4 \end{bmatrix}}
+\newcommand{\tvector}[3]{\begin{bmatrix}  #1 \\ #2 \\#3\end{bmatrix}}
+\newcommand{\dvector}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+
+% matricies
+\newcommand{\tmatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}}
+\newcommand{\dmatrix}[4]{\begin{bmatrix} #1&#2 \\ #3 & #4\end{bmatrix}}
+% col major order TODO
+\newcommand{\tcmatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{bmatrix}}
+\newcommand{\dcmatrix}[4]{\begin{bmatrix} #1&#2 \\ #3 & #4 \end{bmatrix}}
+
+% little naught convention
+\newcommand{\naught}[1]{{#1_0}}
+
+% piecewise func
+\newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \end{array} \right\}}
+\newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \\ #5, & \text{if } #6 \end{array} \right\} }
+
 % User input
 \begin{scontents}[store-env=preview]
 	\( 
