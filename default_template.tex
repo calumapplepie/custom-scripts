@@ -41,6 +41,20 @@
 % little naught convention
 \newcommand{\naught}[1]{{#1_0}}
 
+% grouping negative command
+\newcommand{\n}[1]{{-#1}}
+
+% span function command
+\newcommand{\spanf}[1]{\text{span}\left ( \left \{ #1 \right \} \right) }
+
+% vector of x
+\newcommand{\qvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3} {#1_4}}
+\newcommand{\tvectorx}[1]{\tvector {#1_1} {#1_2} {#1_3}}
+\newcommand{\dvectorx}[1]{\dvector {#1_1} {#1_2}}
+
+% NOTE: \newcommand{\tvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3}} was valid
+
+
 % piecewise func
 \newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \end{array} \right\}}
 \newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \\ #5, & \text{if } #6 \end{array} \right\} }
