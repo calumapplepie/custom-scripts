@@ -29,9 +29,12 @@
 
 % make matrix fast
 \newcommand{\dAugMatrix}[1]{\left[\begin{array}{cc:c} #1 \end{array}\right]}
-\newcommand{\tAugMatrix}[1]{\left[\begin{array}{cc:c} #1 \end{array}\right]}
-\newcommand{\qAugMatrix}[1]{\left[\begin{array}{cc:c} #1 \end{array}\right]}
+\newcommand{\tAugMatrix}[1]{\left[\begin{array}{ccc:c} #1 \end{array}\right]}
+\newcommand{\qAugMatrix}[1]{\left[\begin{array}{cccc:c} #1 \end{array}\right]}
+
+
 \newcommand{\fastMatrix}[1]{\left[\begin{array} #1 \end{array}\right]}
+\newcommand{\qfastrow}[4]{#1 & #2 & #3 & #4}
 
 % Some conveniences for me
 \newcommand{\Laplace}[1]{\mathscr{L}\left[#1\right]}
@@ -51,6 +54,12 @@
 
 % little naught convention
 \newcommand{\naught}[1]{{#1_0}}
+
+% double sub
+\newcommand{\ds}[3]{{#1_{#2_#3}}}
+
+% real
+\newcommand{\real}{\mathbb{R}}
 
 % inverty boi
 \newcommand{\inv}[1]{{1 \over #1}}
