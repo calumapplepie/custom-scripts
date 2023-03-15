@@ -1,0 +1,130 @@
+% Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}	
+
+% fancy matricies
+\usepackage{nicematrix}
+\usepackage{arydshln}
+
+% units!
+\usepackage{siunitx}
+
+% custom formulas
+\usepackage[thinc]{esdiff}
+% more featureful derivative package
+\usepackage{derivative}
+\usepackage{esint}
+
+%your an ece harry
+\usepackage{steinmetz}
+\newcommand{\iphasor}{{\underline I}}
+\newcommand{\vphasor}{{\underline V}}
+
+
+% units plz
+\newcommand{\mSec}{\unit{\m\per\s}}
+\newcommand{\mSecSq}{\unit{\m\per\s\squared}}
+
+\newcommand{\radSec}{\unit{\radian\per\s}}
+\newcommand{\radSecSq}{\unit{\radian\per\s\squared}}
+
+\sisetup{
+  per-mode=fraction
+}
+
+
+% make matrix fast
+\newcommand{\dAugMatrix}[1]{\left[\begin{array}{cc:c} #1 \end{array}\right]}
+\newcommand{\tAugMatrix}[1]{\left[\begin{array}{ccc:c} #1 \end{array}\right]}
+\newcommand{\qAugMatrix}[1]{\left[\begin{array}{cccc:c} #1 \end{array}\right]}
+
+\newcommand{\sAugMatrix}[2]{\left[\begin{array}{c:c} \bold #1 & \vec #2 \end{array}\right]}
+
+\newcommand{\colspace}[1]{\text C \left ( \bold {#1} \right)}
+\newcommand{\nullspace}[1]{\text N \left( \bold {#1} \right)}
+
+\newcommand{\fastMatrix}[1]{\left[\begin{array} #1 \end{array}\right]}
+% SHHHH i know this is bad practice having two similar names
+\newcommand{\fastmatrix}[2]{\left[\begin{array} {#1} #2 \end{array}\right]}
+
+
+% row speed
+\newcommand{\sfastrow}[6]{#1 & #2 & #3 & #4 & #5 & #6}
+\newcommand{\ffastrow}[5]{#1 & #2 & #3 & #4 & #5}
+\newcommand{\qfastrow}[4]{#1 & #2 & #3 & #4}
+\newcommand{\tfastrow}[3]{#1 & #2 & #3 }
+\newcommand{\dfastrow}[2]{#1 & #2 }
+
+% for second lines
+\newcommand{\srow}[6]{\\#1 & #2 & #3 & #4 & #5 & #6}
+\newcommand{\frow}[5]{\\#1 & #2 & #3 & #4 & #5}
+\newcommand{\qrow}[4]{\\#1 & #2 & #3 & #4}
+\newcommand{\trow}[3]{\\#1 & #2 & #3 }
+\newcommand{\drow}[2]{\\#1 & #2 }
+
+% Some conveniences for me
+\newcommand{\Laplace}[1]{\mathscr{L}\left[#1\right]}
+\newcommand{\InvLaplace}[1]{\mathscr{L}^{-1}\left[#1\right]}
+
+% vectors
+\newcommand{\fvector}[5]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4\\ #5 \end{bmatrix}}
+\newcommand{\qvector}[4]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4 \end{bmatrix}}
+\newcommand{\tvector}[3]{\begin{bmatrix}  #1 \\ #2 \\#3\end{bmatrix}}
+\newcommand{\dvector}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+
+\newcommand{\qrowvec}[4]{\fastmatrix {cccc}{#1 & #2 & #3 & #4}}
+\newcommand{\trowvec}[3]{\fastmatrix {ccc}{#1 & #2 & #3 }}
+\newcommand{\drowvec}[2]{\fastmatrix {cc}{#1 & #2  }}
+
+% matricies
+\newcommand{\tmatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}}
+\newcommand{\dmatrix}[4]{\begin{bmatrix} #1&#2 \\ #3 & #4\end{bmatrix}}
+% col major order TODO
+\newcommand{\tcmatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9 \end{bmatrix}}
+\newcommand{\dcmatrix}[4]{\begin{bmatrix} #1&#2 \\ #3 & #4 \end{bmatrix}}
+
+% little naught convention
+\newcommand{\naught}[1]{{#1_0}}
+
+% double sub
+\newcommand{\ds}[3]{{#1_{#2_#3}}}
+\newcommand{\ts}[4]{{{#1_{#2_#3}}_#4}}
+
+\newcommand{\dsv}[3]{{{\vec #1}_{#2_#3}}}
+
+% with respect to
+\newcommand{\wrt}[3]{{#1_{#2/#3}}}
+\newcommand{\vwrt}[3]{{\vec #1_{#2/#3}}}
+
+% matrix sub
+\newcommand{\ms}[3]{{#1_{#2#3}}}
+
+%unit fraction (eg, m/s)
+\newcommand{\ufrac}[2]{{\text {#1} \over \text {#2}}}
+
+% real
+\newcommand{\real}{\mathbb{R}}
+
+% inverty boi
+\newcommand{\inv}[1]{{1 \over {#1}}}
+
+% grouping negative command
+\newcommand{\n}[1]{{-#1}}
+\newcommand{\dc}[2]{{#1#2}}
+
+% span function command
+\newcommand{\spanf}[1]{\text{span}\left ( \left \{ #1 \right \} \right) }
+
+% vector of x
+\newcommand{\qvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3} {#1_4}}
+\newcommand{\tvectorx}[1]{\tvector {#1_1} {#1_2} {#1_3}}
+\newcommand{\dvectorx}[1]{\dvector {#1_1} {#1_2}}
+
+% NOTE: \newcommand{\tvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3}} was valid
+
+
+% piecewise func
+\newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \end{array} \right\}}
+\newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \\ #5, & \text{if } #6 \end{array} \right\} }

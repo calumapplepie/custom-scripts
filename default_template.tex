@@ -1,6 +1,52 @@
 %&xournal
 
+% SHIFT THESE LINES INTO PREGENERATED LATER
+
+%your an ece harry
+\usepackage{steinmetz}
+\newcommand{\iphasor}{{\underline I}}
+\newcommand{\vphasor}{{\underline V}}
+
+\newcommand{\sfastrow}[6]{#1 & #2 & #3 & #4 & #5 & #6}
+\newcommand{\dfastrow}[2]{#1 & #2 }
+
+% for second lines
+\newcommand{\srow}[6]{\\#1 & #2 & #3 & #4 & #5 & #6}
+\newcommand{\frow}[5]{\\#1 & #2 & #3 & #4 & #5}
+\newcommand{\qrow}[4]{\\#1 & #2 & #3 & #4}
+\newcommand{\trow}[3]{\\#1 & #2 & #3 }
+\newcommand{\drow}[2]{\\#1 & #2 }
+
+\newcommand{\fvector}[5]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4\\ #5 \end{bmatrix}}
+
+\newcommand{\trowvec}[3]{\fastmatrix {ccc}{#1 & #2 & #3 }}
+
+
+
+
+% units plz
+\newcommand{\mSec}{\unit{\m\per\s}}
+\newcommand{\mSecSq}{\unit{\m\per\s\squared}}
+
+\newcommand{\radSec}{\unit{\radian\per\s}}
+\newcommand{\radSecSq}{\unit{\radian\per\s\squared}}
+
+\sisetup{
+  per-mode=fraction
+}
+
+% DONE WITH CACHED SHIFT
+
+%% DELETE THESE LINES ON UPDATE
+
+\renewcommand{\colspace}[1]{\text C \left ( \bold {#1} \right)}
+\renewcommand{\nullspace}[1]{\text N \left( \bold {#1} \right)}
+
+%% DONE WITH PRE-DONE SHIFT
+
 \definecolor{xpp_font_color}{HTML}{%%XPP_TEXT_COLOR%%}
+
+
 
 % User input
 \begin{scontents}[store-env=preview]
