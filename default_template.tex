@@ -2,45 +2,31 @@
 
 % SHIFT THESE LINES INTO PREGENERATED LATER
 
-%your an ece harry
-\usepackage{steinmetz}
-\newcommand{\iphasor}{{\underline I}}
-\newcommand{\vphasor}{{\underline V}}
-
-\newcommand{\sfastrow}[6]{#1 & #2 & #3 & #4 & #5 & #6}
-\newcommand{\dfastrow}[2]{#1 & #2 }
-
-% for second lines
-\newcommand{\srow}[6]{\\#1 & #2 & #3 & #4 & #5 & #6}
-\newcommand{\frow}[5]{\\#1 & #2 & #3 & #4 & #5}
-\newcommand{\qrow}[4]{\\#1 & #2 & #3 & #4}
-\newcommand{\trow}[3]{\\#1 & #2 & #3 }
-\newcommand{\drow}[2]{\\#1 & #2 }
-
-\newcommand{\fvector}[5]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4\\ #5 \end{bmatrix}}
-
-\newcommand{\trowvec}[3]{\fastmatrix {ccc}{#1 & #2 & #3 }}
 
 
+\newcommand{\sumF}{\sum \text F}
+\newcommand{\sumM}{\sum \text M}
 
+\newcommand{\clockw}{\circlearrowright}
+\newcommand{\cclockw}{\circlearrowleft}
 
-% units plz
-\newcommand{\mSec}{\unit{\m\per\s}}
-\newcommand{\mSecSq}{\unit{\m\per\s\squared}}
+\renewcommand{\ss}[2]{{#1_{#2}}}
+\newcommand{\ssp}[3]{{{\ss {#1}{#2}}^#3}}
+\newcommand{\dsp}[4]{{{\ds {#1}{#2}{#3}}^#4}}
 
-\newcommand{\radSec}{\unit{\radian\per\s}}
-\newcommand{\radSecSq}{\unit{\radian\per\s\squared}}
+\newcommand{\sinf}[1]{\sin \paren{#1}}
+\newcommand{\cosf}[1]{{\cos \paren{#1}}}
+\newcommand{\tanf}[1]{{\tan \paren{#1}}}
 
-\sisetup{
-  per-mode=fraction
-}
+\newcommand{\detf}[1]{\left | \bold {#1} \right |}
+\newcommand{\deltat}{\Delta \text t}
 
 % DONE WITH CACHED SHIFT
 
 %% DELETE THESE LINES ON UPDATE
 
-\renewcommand{\colspace}[1]{\text C \left ( \bold {#1} \right)}
-\renewcommand{\nullspace}[1]{\text N \left( \bold {#1} \right)}
+\newcommand{\paren}[1]{\left (#1 \right )}
+\newcommand{\abs}[1]{\left |#1 \right |}
 
 %% DONE WITH PRE-DONE SHIFT
 

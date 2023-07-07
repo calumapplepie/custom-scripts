@@ -50,6 +50,10 @@
 \newcommand{\fastmatrix}[2]{\left[\begin{array} {#1} #2 \end{array}\right]}
 
 
+% paren thesis
+\newcommand{\paren}[1]{\left (#1 \right )}
+\newcommand{\abs}[1]{\left |#1 \right |}
+
 % row speed
 \newcommand{\sfastrow}[6]{#1 & #2 & #3 & #4 & #5 & #6}
 \newcommand{\ffastrow}[5]{#1 & #2 & #3 & #4 & #5}
@@ -89,14 +93,14 @@
 \newcommand{\naught}[1]{{#1_0}}
 
 % double sub
-\newcommand{\ds}[3]{{#1_{#2_#3}}}
+\newcommand{\ds}[3]{{{#1}_{{#2}_{#3}}}}
 \newcommand{\ts}[4]{{{#1_{#2_#3}}_#4}}
 
 \newcommand{\dsv}[3]{{{\vec #1}_{#2_#3}}}
 
 % with respect to
 \newcommand{\wrt}[3]{{#1_{#2/#3}}}
-\newcommand{\vwrt}[3]{{\vec #1_{#2/#3}}}
+\newcommand{\vwrt}[3]{{{}\vec #1_{#2/#3}}}
 
 % matrix sub
 \newcommand{\ms}[3]{{#1_{#2#3}}}
@@ -126,5 +130,5 @@
 
 
 % piecewise func
-\newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \end{array} \right\}}
-\newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{if} #4 \\ #5, & \text{if } #6 \end{array} \right\} }
+\newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \end{array} \right\}}
+\newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \\ #5, & \text{if } #6 \end{array} \right\} }
