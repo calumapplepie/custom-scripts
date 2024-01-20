@@ -1,0 +1,17 @@
+\documentclass[varwidth=true, crop, border=5pt]{standalone}
+
+% to update:
+% run 		pdflatex -ini -jobname="preamble" "&pdflatex texPreamble.tex\dump"
+% then run	sudo cp preamble.fmt /etc/texmf/web2c/xournal.fmt
+
+% for storing in memory verbatim content to be reused later
+\usepackage{scontents}
+
+% Blank formula checking
+\usepackage{ifthen}
+\newlength{\pheight}
+
+
+% we store most of the stuff elsewhere
+\input{/home/calum/GitGud/Personal/custom-scripts/texStandardCommands.tex}
+

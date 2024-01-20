@@ -1,0 +1,60 @@
+%&xournal
+
+% SHIFT THESE LINES INTO PREGENERATED LATER
+
+
+
+\newcommand{\sumF}{\sum \text F}
+\newcommand{\sumM}{\sum \text M}
+
+\newcommand{\clockw}{\circlearrowright}
+\newcommand{\cclockw}{\circlearrowleft}
+
+\renewcommand{\ss}[2]{{#1_{#2}}}
+\newcommand{\ssp}[3]{{{\ss {#1}{#2}}^#3}}
+\newcommand{\dsp}[4]{{{\ds {#1}{#2}{#3}}^#4}}
+
+\newcommand{\sinf}[1]{\sin \paren{#1}}
+\newcommand{\cosf}[1]{{\cos \paren{#1}}}
+\newcommand{\tanf}[1]{{\tan \paren{#1}}}
+
+\newcommand{\detf}[1]{\left | \bold {#1} \right |}
+\newcommand{\deltat}{\Delta \text t}
+
+\newcommand{\atan}[1]{{\tan^\n1 \paren{#1}}}
+\newcommand{\atanf}[1]{{\tan^\n1 \paren{#1}}}
+
+\newcommand{\piover}[1]{{\pi \over #1}}
+\newcommand{\ej}[1]{{e^{\j #1}}}
+
+\newcommand{\rectf}[1]{~\text{rect} \paren{#1}}
+
+% DONE WITH CACHED SHIFT
+
+%% DELETE THESE LINES ON UPDATE
+
+\newcommand{\paren}[1]{\left (#1 \right )}
+\newcommand{\abs}[1]{\left |#1 \right |}
+
+%% DONE WITH PRE-DONE SHIFT
+
+\definecolor{xpp_font_color}{HTML}{%%XPP_TEXT_COLOR%%}
+
+
+
+% User input
+\begin{scontents}[store-env=preview]
+	\( 
+	\displaystyle
+    %%XPP_TOOL_INPUT%%
+	\)
+\end{scontents}
+
+\begin{document}
+  % Check if the formula is empty
+  \settoheight{\pheight}{\getstored[1]{preview}}%
+  \ifthenelse{\pheight=0}{\GenericError{}{xournalpp:blankformula}{}{}}
+
+  % Render the user input
+  \textcolor{xpp_font_color}{\getstored[1]{preview}}
+\end{document}
