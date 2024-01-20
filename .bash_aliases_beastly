@@ -1,0 +1,25 @@
+alias reportbug='reportbug -g'
+alias memfree='\free'
+alias free='free -h --si'
+alias units='units --verbose'
+alias unit='units'
+alias debdelta-upgrade='sudo debdelta-upgrade -v'
+alias setlight='light -S'
+alias getLight='light -G'
+alias htop='htop -d 60'
+
+# Less shouldn't be oversensitive
+alias less='less -i'
+
+
+# Name one time I DONT want a source package
+alias sbuild='sbuild -s'
+
+# Lets play it safer with removals
+alias rm='trash'
+alias rem='\rm -I'
+alias trash-empty='trash-empty 7'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias diary='nano -br 80 +-1 $HOME/Documents/Lockdown/journ/$(date -I) && git -C ~/Documents/Lockdown/journ/ add . && git -C ~/Documents/Lockdown/journ/ commit'
