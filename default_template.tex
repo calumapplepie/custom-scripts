@@ -12,7 +12,9 @@
 
 \renewcommand{\ss}[2]{{#1_{#2}}}
 \newcommand{\ssp}[3]{{{\ss {#1}{#2}}^#3}}
+\newcommand{\ssv}[2]{{\vec{\ss {#1}{#2}}}}
 \newcommand{\dsp}[4]{{{\ds {#1}{#2}{#3}}^#4}}
+\newcommand{\dse}[3]{{{#1}_{#2#3}}}
 
 \newcommand{\sinf}[1]{\sin \paren{#1}}
 \newcommand{\cosf}[1]{{\cos \paren{#1}}}
@@ -26,8 +28,38 @@
 
 \newcommand{\piover}[1]{{\pi \over #1}}
 \newcommand{\ej}[1]{{e^{\j #1}}}
+\newcommand{\et}[1]{{e^{#1 t}}}
 
 \newcommand{\rectf}[1]{~\text{rect} \paren{#1}}
+\newcommand{\sincf}[1]{~\text{sinc} \paren{#1}}
+
+\newcommand{\sumf}[2]{\sum_{n=#1}^{#2}}
+\newcommand{\intf}[2]{\int_{#1}^{#2}}
+\newcommand{\intfn}[2]{\intf {-#1} {#2}}
+
+
+\newcommand{\pythag}[2]{{\sqrt {\paren{#1}^2 +\paren{#2}^2}}}
+
+\newcommand{\pfrac}[3]{{\paren{\frac {#1} {#2}}^{#3}}}
+
+% faster units
+\newcommand{\amp}{{\unit\Amp}}
+\newcommand{\volt}{{\unit\volt}}
+\newcommand{\kohm}{{\unit\kohm}}
+\newcommand{\mA}{{\unit\mA}}
+\newcommand{\mv}{{\unit\mV}}
+
+% magic from stack overflow
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\newcommand{\volume}{\hcancel{V}}
+
+\newcommand{\mmf}{{\mathcal{F}}}
+\newcommand{\reluc}{{\mathcal{R}}}
+
+\newcommand{\del}{\nabla}
+\newcommand{\tsub}[2]{{{#1}_\text{#2}}}
 
 % DONE WITH CACHED SHIFT
 
