@@ -10,17 +10,24 @@ WATERMARK=$1
 INBOUND=$2
 OUTBOUND=$3
 
-
+echo "s%$WATERMARK%$BLANKS%g"
 
 UNCOMPRESSED=`mktemp --dry-run 'uncompressed-XXXXXXXXXX.pdf'`
 FIXED=`mktemp --dry-run 'fixed-XXXXXXXXXX.pdf'`
 UNMARKED=`mktemp --dry-run 'unmarked-XXXXXXXXXX.pdf'`
 
-WATERMARKLEN=${#WATERMARK}
+WATERMARK2=${WATERMARK//\\/}
+echo $WATERMARK 
+echo $WATERMARK2
+
+WATERMARKLEN=${#WATERMARK2}
+WATERMARKLEN1=${#WATERMARK}
+echo $WATERMARKLEN $WATERMARKLEN1
+
 BLANKS=`printf %${WATERMARKLEN}s`
 
 qpdf --stream-data=uncompress "$INBOUND" $UNCOMPRESSED
-sed -e "s%$WATERMARK%$BLANKS%g" < $UNCOMPRESSED > $FIXED
+sed -ze "s%$WATERMARK%$BLANKS%g" < $UNCOMPRESSED > $FIXED
 pdftk $FIXED output $UNMARKED
 qpdf --stream-data=compress $UNMARKED "$OUTBOUND"
 rm $UNCOMPRESSED $FIXED $UNMARKED

@@ -47,6 +47,7 @@
 
 \newcommand{\fastMatrix}[1]{\left[\begin{array} #1 \end{array}\right]}
 % SHHHH i know this is bad practice having two similar names
+% update: i have forgotten which did which... i beleive the 2nd one specifies wrapping details?
 \newcommand{\fastmatrix}[2]{\left[\begin{array} {#1} #2 \end{array}\right]}
 
 
@@ -71,6 +72,9 @@
 % Some conveniences for me
 \newcommand{\Laplace}[1]{\mathscr{L}\left[#1\right]}
 \newcommand{\InvLaplace}[1]{\mathscr{L}^{-1}\left[#1\right]}
+\newcommand{\mmf}{{\mathcal{F}}}
+\newcommand{\reluc}{{\mathcal{R}}}
+\newcommand{\real}{\mathbb{R}} % real symbol
 
 % vectors
 \newcommand{\fvector}[5]{\begin{bmatrix}  #1 \\ #2 \\#3 \\#4\\ #5 \end{bmatrix}}
@@ -92,43 +96,65 @@
 % little naught convention
 \newcommand{\naught}[1]{{#1_0}}
 
-% double sub
+% subscript commands (can be easier to write, and include grouping)
 \newcommand{\ds}[3]{{{#1}_{{#2}_{#3}}}}
 \newcommand{\ts}[4]{{{#1_{#2_#3}}_#4}}
 
-\newcommand{\dsv}[3]{{{\vec #1}_{#2_#3}}}
+\newcommand{\ssv}[2]{{{\vec {#1}_{#2}}}} %vector sub
+\newcommand{\dsv}[3]{{{\vec {#1}_{{#2}_{#3}}}}}
+
+\newcommand{\ssp}[3]{{{{#1}_{#2}}^{#3}}} %subscript with power
+\newcommand{\dsp}[4]{{{\ds {#1}{#2}{#3}}^#4}}
+
+\newcommand{\dse}[3]{{{#1}_{#2#3}}} % subscript with both being equal (ie, 2 chars)
 
 % with respect to
 \newcommand{\wrt}[3]{{#1_{#2/#3}}}
 \newcommand{\vwrt}[3]{{{}\vec #1_{#2/#3}}}
 
-% matrix sub
-\newcommand{\ms}[3]{{#1_{#2#3}}}
-
-%unit fraction (eg, m/s)
-\newcommand{\ufrac}[2]{{\text {#1} \over \text {#2}}}
-
-% real
-\newcommand{\real}{\mathbb{R}}
-
 % inverty boi
 \newcommand{\inv}[1]{{1 \over {#1}}}
+\newcommand{\piover}[1]{{\pi \over #1}}
 
 % grouping negative command
 \newcommand{\n}[1]{{-#1}}
 \newcommand{\dc}[2]{{#1#2}}
 
-% span function command
+% function commands, wrap things up in some nice parenthesis
 \newcommand{\spanf}[1]{\text{span}\left ( \left \{ #1 \right \} \right) }
+\newcommand{\detf}[1]{\left | \bold {#1} \right |}
 
-% vector of x
+\newcommand{\sinf}[1]{\sin \paren{#1}}
+\newcommand{\cosf}[1]{{\cos \paren{#1}}}
+\newcommand{\tanf}[1]{{\tan \paren{#1}}}
+
+\newcommand{\rectf}[1]{~\text{rect} \paren{#1}}
+\newcommand{\sincf}[1]{~\text{sinc} \paren{#1}}
+\newcommand{\atanf}[1]{{\tan^\n1 \paren{#1}}}
+
+\newcommand{\sumf}[2]{\sum_{n=#1}^{#2}}
+\newcommand{\intf}[2]{\int_{#1}^{#2}}
+\newcommand{\intfn}[2]{\intf {-#1} {#2}}
+
+% vector of x (numberd subscripts)
 \newcommand{\qvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3} {#1_4}}
 \newcommand{\tvectorx}[1]{\tvector {#1_1} {#1_2} {#1_3}}
 \newcommand{\dvectorx}[1]{\dvector {#1_1} {#1_2}}
 
 % NOTE: \newcommand{\tvectorx}[1]{\qvector {#1_1} {#1_2} {#1_3}} was valid
 
+% faster units
+\newcommand{\amp}{{\unit\Amp}}
+\newcommand{\volt}{{\unit\volt}}
+\newcommand{\kohm}{{\unit\kohm}}
+\newcommand{\mA}{{\unit\mA}}
+\newcommand{\mv}{{\unit\mV}}
+
 
 % piecewise func
 \newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \end{array} \right\}}
 \newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \\ #5, & \text{if } #6 \end{array} \right\} }
+
+%heavyweights
+\newcommand{\pythag}[2]{{\sqrt {\paren{#1}^2 +\paren{#2}^2}}}
+\newcommand{\pfrac}[3]{{\paren{\frac {#1} {#2}}^{#3}}} %parenthesis fraction
