@@ -4,9 +4,7 @@
 \usepackage{mathrsfs}
 \usepackage{cancel}	
 
-% fancy matricies
-\usepackage{nicematrix}
-\usepackage{arydshln}
+\usepackage{xcolor}
 
 % units!
 \usepackage{siunitx}
@@ -17,8 +15,16 @@
 \usepackage{derivative}
 \usepackage{esint}
 
-%your an ece harry
+%youre an ece harry
 \usepackage{steinmetz}
+
+%fix me some spacing problems
+\usepackage{mleftright} % could use this everywhere, but idk that i want to
+
+% fancy matricies
+%\usepackage{nicematrix} % turns out to be pretty hefty!
+\usepackage{arydshln} %must be loaded late in process
+
 \newcommand{\iphasor}{{\underline I}}
 \newcommand{\vphasor}{{\underline V}}
 
@@ -36,24 +42,24 @@
 
 
 % make matrix fast
-\newcommand{\dAugMatrix}[1]{\left[\begin{array}{cc:c} #1 \end{array}\right]}
-\newcommand{\tAugMatrix}[1]{\left[\begin{array}{ccc:c} #1 \end{array}\right]}
-\newcommand{\qAugMatrix}[1]{\left[\begin{array}{cccc:c} #1 \end{array}\right]}
+\newcommand{\dAugMatrix}[1]{\mleft[\begin{array}{cc:c} #1 \end{array}\mright]}
+\newcommand{\tAugMatrix}[1]{\mleft[\begin{array}{ccc:c} #1 \end{array}\mright]}
+\newcommand{\qAugMatrix}[1]{\mleft[\begin{array}{cccc:c} #1 \end{array}\mright]}
 
-\newcommand{\sAugMatrix}[2]{\left[\begin{array}{c:c} \bold #1 & \vec #2 \end{array}\right]}
+\newcommand{\sAugMatrix}[2]{\mleft[\begin{array}{c:c} \bold #1 & \vec #2 \end{array}\mright]}
 
-\newcommand{\colspace}[1]{\text C \left ( \bold {#1} \right)}
-\newcommand{\nullspace}[1]{\text N \left( \bold {#1} \right)}
+\newcommand{\colspace}[1]{\text C \mleft ( \bold {#1} \mright)}
+\newcommand{\nullspace}[1]{\text N \mleft( \bold {#1} \mright)}
 
-\newcommand{\fastMatrix}[1]{\left[\begin{array} #1 \end{array}\right]}
+\newcommand{\fastMatrix}[1]{\mleft[\begin{array} #1 \end{array}\mright]}
 % SHHHH i know this is bad practice having two similar names
 % update: i have forgotten which did which... i beleive the 2nd one specifies wrapping details?
-\newcommand{\fastmatrix}[2]{\left[\begin{array} {#1} #2 \end{array}\right]}
+\newcommand{\fastmatrix}[2]{\mleft[\begin{array} {#1} #2 \end{array}\mright]}
 
 
 % paren thesis
-\newcommand{\paren}[1]{\left (#1 \right )}
-\newcommand{\abs}[1]{\left |#1 \right |}
+\newcommand{\paren}[1]{\mleft (#1 \mright )}
+\newcommand{\abs}[1]{\mleft |#1 \mright |}
 
 % row speed
 \newcommand{\sfastrow}[6]{#1 & #2 & #3 & #4 & #5 & #6}
@@ -70,8 +76,8 @@
 \newcommand{\drow}[2]{\\#1 & #2 }
 
 % Some conveniences for me
-\newcommand{\Laplace}[1]{\mathscr{L}\left[#1\right]}
-\newcommand{\InvLaplace}[1]{\mathscr{L}^{-1}\left[#1\right]}
+\newcommand{\Laplace}[1]{\mathscr{L}\mleft[#1\mright]}
+\newcommand{\InvLaplace}[1]{\mathscr{L}^{-1}\mleft[#1\mright]}
 \newcommand{\mmf}{{\mathcal{F}}}
 \newcommand{\reluc}{{\mathcal{R}}}
 \newcommand{\real}{\mathbb{R}} % real symbol
@@ -121,8 +127,8 @@
 \newcommand{\dc}[2]{{#1#2}}
 
 % function commands, wrap things up in some nice parenthesis
-\newcommand{\spanf}[1]{\text{span}\left ( \left \{ #1 \right \} \right) }
-\newcommand{\detf}[1]{\left | \bold {#1} \right |}
+\newcommand{\spanf}[1]{\text{span}\mleft ( \mleft \{ #1 \mright \} \mright) }
+\newcommand{\detf}[1]{\mleft | \bold {#1} \mright |}
 
 \newcommand{\sinf}[1]{{\sin \paren{#1}}}
 \newcommand{\cosf}[1]{{\cos \paren{#1}}}
@@ -155,8 +161,8 @@
 
 
 % piecewise func
-\newcommand{\dpiecewise}[4]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \end{array} \right\}}
-\newcommand{\tpiecewise}[6]{\left\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \\ #5, & \text{if } #6 \end{array} \right\} }
+\newcommand{\dpiecewise}[4]{\mleft\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \end{array} \mright\}}
+\newcommand{\tpiecewise}[6]{\mleft\{\begin{array}{lr} #1, & \text{if} #2 \\ #3, & \text{ if } #4 \\ #5, & \text{if } #6 \end{array} \mright\} }
 
 %heavyweights
 \newcommand{\pythag}[2]{{\sqrt {\paren{#1}^2 +\paren{#2}^2}}}

@@ -1,8 +1,11 @@
 %&xournal
 
+% is the speed annoying you? the font maps *may* be the culprit; its hard to say!
+
+
 % SHIFT THESE LINES INTO PREGENERATED LATER
 
-
+\usepackage{mathtools}
 
 \newcommand{\sumF}{\sum \text F}
 \newcommand{\sumM}{\sum \text M}
@@ -36,12 +39,17 @@
 
 \definecolor{xpp_font_color}{HTML}{%%XPP_TEXT_COLOR%%}
 
-
+% avoid dealing with the massive pdftex.map file
+% pdftex will magically build any missing fonts
+% causes a slight slowdown on rebuild, but saves us half a second once the build is done
+% also makes things a little pixelated
+%\pdfmapfile{esint.map}
+% note: when running off AC, and the extra .1s isn't an issue, uncomment above line
 
 % User input
 \begin{scontents}[store-env=preview]
 	\( 
-	\displaystyle
+	\displaystyle \mleftright
     %%XPP_TOOL_INPUT%%
 	\)
 \end{scontents}
